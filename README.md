@@ -25,3 +25,12 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+##all toppings combinations with number of times repeated
+http://prntscr.com/lj39k4
+
+##top 20 combinations
+http://prntscr.com/lj39su
+
+##spinner loader
+http://prntscr.com/lj3a3z
