@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Pizza Hut</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+    background-color: #666;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+    float: left;
+    width: 30%;
+    height: auto; /* only for demonstration, should be removed */
+    background: #ccc;
+    padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+article {
+    float: left;
+    padding: 20px;
+    width: 70%;
+    background-color: #f1f1f1;
+    height: auto; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Style the footer */
+footer {
+    background-color: #777;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+    nav, article {
+        width: 100%;
+        height: auto;
+    }
+}
+</style>
+</head>
+<body>
+    <ngx-spinner
+        bdColor="rgba(51,51,51,0.8)"
+        size="medium"
+        color="#fff"
+        type="ball-scale-multiple">
+       <p style="font-size: 20px; color: white">Loading...</p>
+    </ngx-spinner>
+<header>
+  <h2>List of Topping Combinations</h2>
+</header>
+
+<section>
+  <nav>
+    <ul>
+        <div style="text-align: left;width: 470px;margin-left: 30px;">
+            <h1>
+           Top 20 Topping Combinations 
+            </h1>
+            
+            <div *ngFor="let object of topToppinglist | slice:0:20; index as i ">
+                <div *ngFor="let combination of object.toppings">                
+                {{i+1}})  {{combination}}
+                <br>
+                <br>
+                <span>This topping combination repeat {{object.repeat}} times</span>
+                <br>
+                <br>
+                <div> ---------------- </div> 
+            </div>
+            <br>
+            <br>
+            </div>
+          </div>
+    </ul>
+  </nav>
+  
+  <article>
+  <div style="text-align: left;width: 470px;margin-left: 30px;">
+  <h1>
+  Topping Combinations with repeated quantity
+  </h1>
+  <div *ngFor="let object of toppinglist; index as i">
+  <div *ngFor="let combination of object.toppings">
+  
+  {{i+1}})  {{combination}}
+  <br>
+  <br>
+  <span>This topping combination repeat {{object.repeat}} times</span>
+  <br>
+  <br>
+
+  <div> ---------------- </div> 
+  </div>
+  <br>
+  <br>
+  </div>
+</div>
+  </article>
+</section>
+</body>
+</html>
